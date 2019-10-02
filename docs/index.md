@@ -1,7 +1,8 @@
 # Les Filtres d'effets
+## What is it?
 
-  ## What is it?
   On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriété CSS "filter" et sa version préfixée "-webkit-filter.Il n'existe pas de version préfixée -o-filter, -moz-filter. Il existe bien une version -ms-filter pour Internet Explorer, mais il utilise sa propre implémentation.
+  
   ## Le filtre de floutage
   ## Welcome to GitHub Pages
 ```
