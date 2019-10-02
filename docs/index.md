@@ -1,6 +1,6 @@
-#Les Filtres d'effets
-##What is it?
-##Le filtre de floutage
+# Les Filtres d'effets
+## What is it?
+## Le filtre de floutage
 ## Welcome to GitHub Pages
 
 ```
