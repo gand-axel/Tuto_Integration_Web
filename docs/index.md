@@ -6,7 +6,14 @@ On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriét
 
 ## Le filtre de floutage gaussien
 
-Le filtre de floutage gaussien permet comme son nom l'indique de flouter l'élément HTML.
+Le filtre de floutage gaussien permet comme son nom l'indique de flouter l'élément HTML. Pour l'appliquer il faut utiliser le code CSS suivant:
+
+```CSS
+
+filter:blur(3px);
+
+```
+3px correspond au nombre de pixels qui vont se mélanger pour former le floutage. 0px fait qu'il n'y a aucun floutage et l'unité px peut être remplacée par n'importe quelle unité sauf %.
   
 ## Welcome to GitHub Pages
 ```
