@@ -14,6 +14,26 @@ filter:blur(3px);
 
 ```
 3px correspond au nombre de pixels qui vont se mélanger pour former le floutage. 0px fait qu'il n'y a aucun floutage et l'unité px peut être remplacée par n'importe quelle unité sauf %.
+
+## Le filtre en niveau de gris
+
+## Le filtre de luminosité
+
+## Le filtre d'ombre portée
+
+## Le filtre de saturation
+
+## Le filtre de contraste
+
+## Le filtre d'opacité
+
+## Le filtre d'inversion
+
+## Le filtre de rotation de teintes
+
+## Le filtre animé
+
+# Les Blend mods
   
 ## Welcome to GitHub Pages
 ```
