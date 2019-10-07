@@ -25,6 +25,7 @@ Le filtre en niveau de gris converti en niveau de gris l'image sur lequel il est
 filter:grayscale(30%);
 
 ```
+## Le filtre sépia
 
 ## Le filtre de luminosité
 
