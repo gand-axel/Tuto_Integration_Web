@@ -2,11 +2,11 @@
 
 ## What is it?
 
-On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriété CSS "filter" et sa version préfixée "-webkit-filter.Il n'existe pas de version préfixée -o-filter, -moz-filter. Il existe bien une version -ms-filter pour Internet Explorer, mais il utilise sa propre implémentation.
+On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriété CSS "filter" et sa version préfixée "-webkit-filter.Il n'existe pas de version préfixée -o-filter, -moz-filter. Il existe bien une version -ms-filter pour Internet Explorer, mais il utilise sa propre implémentation. Cela permet donc d'altérer le rendu d'une image sans devoir stocker des dizaines de versions photoshopper de celle-ci.
 
 ## Le filtre de floutage gaussien
 
-Le filtre de floutage gaussien permet comme son nom l'indique de flouter l'élément HTML. Pour l'appliquer il faut utiliser le code CSS suivant:
+Le filtre de floutage gaussien permet comme son nom l'indique de flouter l'élément HTML. L'intérêt est de ne pas avoir à stocker une image photoshopper en plus mais de modifier directement l'image et d'ajuster plus facilement le floutage. Pour l'appliquer il faut utiliser le code CSS suivant:
 
 ```CSS
 
