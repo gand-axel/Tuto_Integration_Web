@@ -17,6 +17,15 @@ filter:blur(3px);
 
 ## Le filtre en niveau de gris
 
+Le filtre en niveau de gris converti en niveau de gris l'image sur lequel il est appliqué. La valeur du paramètre de la fonction grayscale définit l'intensité de cette conversion. En utilisant une valeur de 100%, elle sera complètement en niveaux de gris. 0% conservera l'image telle quelle. La valeur par défaut du paramètre est 0. Il suffit donc d'utiliser le css suivant pour l'image visée:
+
+
+```CSS
+
+filter:grayscale(30%);
+
+```
+
 ## Le filtre de luminosité
 
 ## Le filtre d'ombre portée
