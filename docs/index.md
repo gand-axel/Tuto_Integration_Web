@@ -27,7 +27,7 @@ filter:grayscale(30%);
 ```
 ## Le filtre sépia
 
-La fonction CSS ```CSS sepia() ``` applique un filtre sépia sur l'image, lui donnant un aspect plus jaune/marron, voire vielli.
+La fonction CSS ``` sepia() ``` applique un filtre sépia sur l'image, lui donnant un aspect plus jaune/marron, voire vielli.
 L'intensité du filtre est indiquée sous la forme d'un nombre entre 0 et 1 ou d'un pourcentage. Une valeur de 100% (ou 1) permttra d'obtenir une image complètement sépia tandis qu'une valeur de 0% (ou 0) laissera l'image inchangée.
 Il faut utiliser le css suivant pour l'image visée:
 
