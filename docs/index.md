@@ -6,7 +6,7 @@ On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriét
 
 ## Le filtre de floutage gaussien
 
-Le filtre de floutage gaussien permet comme son nom l'indique de flouter l'élément HTML. L'intérêt est de ne pas avoir à stocker une image photoshopper en plus mais de modifier directement l'image et d'ajuster plus facilement le floutage. Pour l'appliquer il faut utiliser le code CSS suivant:
+Le filtre de floutage gaussien permet comme son nom l'indique de flouter l'élément HTML. Pour l'appliquer il faut utiliser le code CSS suivant:
 
 ```CSS
 
@@ -26,6 +26,17 @@ filter:grayscale(30%);
 
 ```
 ## Le filtre sépia
+
+La fonction CSS ```CSS sepia() ``` applique un filtre sépia sur l'image, lui donnant un aspect plus jaune/marron, voire vielli.
+L'intensité du filtre est indiquée sous la forme d'un nombre entre 0 et 1 ou d'un pourcentage. Une valeur de 100% (ou 1) permttra d'obtenir une image complètement sépia tandis qu'une valeur de 0% (ou 0) laissera l'image inchangée.
+Il faut utiliser le css suivant pour l'image visée:
+
+```CSS
+
+filter:sepia(0.65); /*Pareil que 65%*/
+filter:sepia(100%); /*Image complètement sépia*/.
+
+```
 
 ## Le filtre de luminosité
 
