@@ -2,7 +2,7 @@
 
 ## What is it?
 
-On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriété CSS "filter" et sa version préfixée "-webkit-filter.Il n'existe pas de version préfixée -o-filter, -moz-filter. Il existe bien une version -ms-filter pour Internet Explorer, mais il utilise sa propre implémentation. Cela permet donc d'altérer le rendu d'une image sans devoir stocker des dizaines de versions photoshopper de celle-ci.
+On peut en CSS appliquer des effets sur un élément HTML grâce à sa propriété CSS "filter" et sa version préfixée "-webkit-filter.Il n'existe pas de version préfixée -o-filter, -moz-filter. Il existe bien une version -ms-filter pour Internet Explorer, mais il utilise sa propre implémentation. Cela permet donc d'altérer le rendu d'une image sans devoir stocker des dizaines de versions photoshopper de celle-ci. La propriété peut prendre la valeur "none" qui retire tous filtres sur le background de l'image ou une ou plusieurs des fonctions ci-dessous.
 
 ## Le filtre de floutage gaussien
 
@@ -40,21 +40,142 @@ filter:sepia(100%); /*Image complètement sépia*/.
 
 ## Le filtre de luminosité
 
+La fonction ``` brightness() ``` permet de modifier la luminosité d'une image. Un argument de 0% créera une image totalement noire et une valeur de 100% conservera l'image originale telle quelle. Il est possible d'utiliser des valeurs supérieures à 100% afin d'obtenir des images saturées en luminosité. La valeur par défaut pour l'argument est 1.
+
+```CSS
+
+filter: brightness(3%);
+
+```
+
 ## Le filtre d'ombre portée
+
+Une ombre portée est une version décalée, dans une couleur donnée, du canal alpha de l'image qui est affiché sous celle-ci. Le mot-clé inset n'est pas autorisée. Cette fonction est semblable à la propriété box-shadow plus répandue, seule différence : les navigateurs utilisent parfois l'accélération matérielle pour les filtres ce qui peut permettre d'obtenir de meilleurs performances. Pour mettre un filtre d'ombre portée, il faut utiliser la fonction ``` drop-shadow() ``` avec en paramètres obligatoires le décalage de l'ombre sur l'axe horizontal, le décalage sur l'axe vertical et le flou, le largeur et la couleur de l'ombre sont optionnels.
+
+```CSS
+
+filter: drop-shadow(16px 16px 10px black);
+
+```
 
 ## Le filtre de saturation
 
+L'image est saturée. La valeur de l'argument de la fonction ``` saturate() ``` indique la force de la saturation. Une valeur de 0% fera que l'image sera totalement désaturée et une valeur de 100% conservera l'image dans son état original. Les valeurs intermédiaires augmenteront progressivement la saturation jusqu'à la saturation d'origine. Il est possible d'utiliser des valeurs supérieures à 100% pour obtenir un effet de sursaturation. La valeur par défaut de l'argument est 1.
+
+```CSS
+
+filter: saturate(200%);
+
+```
+
 ## Le filtre de contraste
+
+La fonction ``` contrast() ``` permet d'ajuster le contraste d'une image. Une valeur de 0% créera une image entièrement grise. Une valeur de 100% conservera l'image d'origine. Il est possible d'utiliser des valeurs supérieures à 100% pour augmenter le contraste. La valeur par défaut de l'argument est 1.
+
+```CSS
+
+filter: contrast(200%);
+
+```
 
 ## Le filtre d'opacité
 
+La fonction ``` opacity() ``` permet de régler l'opacité d'une image. La valeur de l'argument indique le niveau d'opacité. Ainsi, une valeur de 0% rendra l'image complètement transparente et une valeur de 100% conservera l'image. Les valeurs intermédiaires appliqueront une opacité proportionnelle.  La valeur par défaut de l'argument est 1. Cette fonction est proche de la propriété opacity.
+
+```CSS
+
+filter: opacity(50%);
+
+```
+
 ## Le filtre d'inversion
+
+Ce filtre permet d'inverser les couleurs de l'image.La valeur de l'argument définit la force de cette inversion. Une valeur de 100% inversera complètement les couleurs (tel un négatif) et une valeur 0% conservera l'image. Les valeurs intermédiaires inverseront proportionnellement les couleurs de l'image. La valeur par défaut de l'argument est 0.
+
+
+```CSS
+
+filter: invert(50%);
+
+```
 
 ## Le filtre de rotation de teintes
 
+Ce filtre applique une rotation de teinte. La valeur de l'angle passé en argument définit le nombre de degrés parcouru sur le cercle des couleurs. Une valeur de 0deg conservera l'image telle quelle. La valeur par défaut du paramètre est 0deg. Il n'y a pas de valeur maximale pour l'argument, si une valeur supérieure à 360deg est utilisée, ce sera la mesure de l'angle correspondante qui sera utilisée.
+
+```CSS
+
+filter: hue-rotate(180deg);
+
+```
+## Appliqué plusieurs filtres
+
+Pour cela rien de plus simple, il suffit d'enchainer les fonctions.
+```CSS
+
+filter: hue-rotate(180deg) brightness(50%);
+
+```
 ## Le filtre animé
 
+On peut animé un filtre en définissant les filtres et leur état à la fonction ``` @-webkit-keyframes filter-animation ``` à 0%,50% et 100%. Il suffit alors d'appliquer à la propriété ``` -webkit-animation ``` cette fonction avec une durée en seconde et un nombre de boucle d'animation à jouer.
+```CSS
+.ex10{
+  -webkit-animation: filter-animation 5s infinite;
+}
+
+@-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: sepia(0) saturate(2);
+  }
+  
+  50% {
+    -webkit-filter: sepia(1) saturate(8);
+  }
+  
+  100% {
+    -webkit-filter: sepia(0) saturate(2);
+  }
+}
+
+```
+
+## Le filtre appliqué derrière l'élément
+
+Jusque là tous les filtres présentés précédement s'applique sur le background d'un élément HTML mais on peut appliquer un filtre derrière un élément (backdrop). Cela signifie que l'on est derrière le background.On peut donc appliquer un background sur l'élément et appliquer un filtre sur l'élément et son background. Pour cela il suffit de remplacer la propriété filter par la propriété backdrop-filter. L'effet étant situé derrière l'élément, il pourra être observé en ajustant la transparence de l'élément.
+```CSS
+
+filter:opacity(50%);
+backdrop-filter: hue-rotate(180deg) brightness(50%);
+
+```
+
+## L'alternative des fichiers XML contenant un filtre SVG
+
+La fonction url() prend comme argument l'emplacement d'un fichier XML qui définit le filtre SVG à appliquer. L'URL peut faire référence à une ancre d'un élément spécifique.
+```SVG
+// dans SVG
+
+<svg ...>
+	...
+	<filter id="pictureFilter" >
+		<feGaussianBlur stdDeviation="5" />
+	</filter> 
+</svg>
+```
+```CSS
+
+filter:url(commonfilters.xml#pictureFilter);
+
+```
+
+### Sauf mention contraire, les fonctions qui acceptent des valeurs exprimées en pourcentages (34%) acceptent également des valeurs décimales (0.34).
+
 # Les Blend mods
+
+# Sources et autres tutoriels
+
+- https://developer.mozilla.org/fr/docs/Web/CSS/filter
   
 ## Welcome to GitHub Pages
 ```
